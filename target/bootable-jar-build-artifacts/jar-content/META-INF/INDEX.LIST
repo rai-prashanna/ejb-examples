@@ -1,0 +1,23 @@
+JarIndex-Version: 1.0
+
+jboss-modules-2.1.0.Final.jar
+META-INF
+META-INF/maven
+META-INF/maven/org.jboss.modules
+META-INF/maven/org.jboss.modules/jboss-modules
+org
+org/jboss
+org/jboss/modules
+org/jboss/modules/_private
+org/jboss/modules/filter
+org/jboss/modules/log
+org/jboss/modules/management
+org/jboss/modules/maven
+org/jboss/modules/ref
+org/jboss/modules/security
+org/jboss/modules/xml
+schema
+LICENSE.txt
+XPP3-LICENSE.txt
+module-info.class
+
