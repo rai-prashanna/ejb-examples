@@ -75,35 +75,35 @@ public class TaskResource {
        return Response.created(uri).build();
     }
 
-//    @GET
-//    // JSON: include "application/json" in the @Produces annotation to include json support
-//    // @Produces({ "application/xml", "application/json" })
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response getTasks(@Context SecurityContext context) {
-//        List<Task> tasks= Collections.<Task>emptyList();
-//        try {
-//            tx.begin();
-//            tasks = getTasks(getUser(context));
-//            tx.commit();
-//            // return tasks;
-//        } catch (Exception ex) {
-//            throw new RuntimeException(ex);
-//        }
-//        return Response.ok(tasks,MediaType.APPLICATION_JSON).build();
-//    }
-
-    @Produces({"application/xml"})
     @GET
-    public List<Task> getTasks(@Context SecurityContext context) {
+    // JSON: include "application/json" in the @Produces annotation to include json support
+    // @Produces({ "application/xml", "application/json" })
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getTasks(@Context SecurityContext context) {
+        List<Task> tasks= Collections.<Task>emptyList();
         try {
             tx.begin();
-            List<Task> tasks = getTasks(getUser(context));
+            tasks = getTasks(getUser(context));
             tx.commit();
-            return tasks;
+            // return tasks;
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
+        return Response.ok(tasks,MediaType.APPLICATION_JSON).build();
     }
+
+//    @Produces({"application/xml"})
+//    @GET
+//    public List<Task> getTasks(@Context SecurityContext context) {
+//        try {
+//            tx.begin();
+//            List<Task> tasks = getTasks(getUser(context));
+//            tx.commit();
+//            return tasks;
+//        } catch (Exception ex) {
+//            throw new RuntimeException(ex);
+//        }
+//    }
     private List<Task> getTasks(TaskUser user) {
         return taskDao.getAll(user);
     }

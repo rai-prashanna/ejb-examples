@@ -34,7 +34,7 @@ import jakarta.persistence.OneToMany;
  *
  * @author Oliver Kiss
  */
-@SuppressWarnings("serial")
+//@SuppressWarnings("serial")
 @Entity
 public class TaskUser implements Serializable {
 

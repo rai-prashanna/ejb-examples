@@ -33,6 +33,9 @@ wget https://repo1.maven.org/maven2/org/postgresql/postgresql/42.2.9/postgresql-
 ## Add a new task:
 ```
 curl -X POST http://localhost:8080/<Context-root>/tasks/title/foo
+
+curl -X POST http://localhost:8080/postgresql/tasks/title/foo
+
 ```
 ## Get all the tasks:
 ```

@@ -24,6 +24,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 import java.io.Serializable;
 import java.io.StringReader;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -40,9 +41,9 @@ import jakarta.xml.bind.annotation.XmlTransient;
  *
  * @author Oliver Kiss and others
  */
-@SuppressWarnings("serial")
+//@SuppressWarnings("serial")
 @Entity
-@XmlRootElement(name = "task")
+//@XmlRootElement(name = "task")
 public class Task implements Serializable {
 
     @Id
@@ -50,7 +51,8 @@ public class Task implements Serializable {
     private Long id;
 
     @ManyToOne
-    private TaskUser owner;
+    @JsonbTransient
+    public TaskUser owner;
 
     private String title;
 
@@ -62,7 +64,7 @@ public class Task implements Serializable {
         this.title = title;
     }
 
-    @XmlAttribute
+//    @XmlAttribute
     public Long getId() {
         return id;
     }
@@ -71,14 +73,14 @@ public class Task implements Serializable {
         this.id = id;
     }
 
-    @XmlTransient
+//    @XmlTransient
     // JSON: uncomment to include json support (note json is not part of the JAX-RS standard)
     // @JsonIgnore
     public TaskUser getOwner() {
         return owner;
     }
 
-    @XmlAttribute
+//    @XmlAttribute
     public String getOwnerName() {
         return owner.getUsername();
     }
@@ -87,7 +89,7 @@ public class Task implements Serializable {
         this.owner = owner;
     }
 
-    @XmlElement
+//    @XmlElement
     public String getTitle() {
         return title;
     }
