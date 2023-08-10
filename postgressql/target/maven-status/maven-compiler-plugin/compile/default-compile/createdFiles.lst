@@ -1,0 +1,7 @@
+org/wildfly/plugins/demo/tasksrs/service/TaskResource.class
+org/wildfly/plugins/demo/tasksrs/model/TaskUserDao.class
+org/wildfly/plugins/demo/tasksrs/model/TaskUser.class
+org/wildfly/plugins/demo/tasksrs/model/Task.class
+org/wildfly/plugins/demo/tasksrs/model/TaskUserDaoImpl.class
+org/wildfly/plugins/demo/tasksrs/model/TaskDao.class
+org/wildfly/plugins/demo/tasksrs/model/TaskDaoImpl.class

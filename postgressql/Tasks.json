@@ -1,0 +1,14 @@
+<collection>
+<task id="1" ownerName="Anonymous">
+<title>foo</title>
+</task>
+<task id="2" ownerName="Anonymous">
+<title>foo</title>
+</task>
+</collection>
+
+{
+    "id":1,
+    "ownerName": "Anonymous",
+    "title":"foo"
+}
