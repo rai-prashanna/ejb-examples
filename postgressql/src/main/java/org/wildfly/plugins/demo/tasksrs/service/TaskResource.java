@@ -93,6 +93,7 @@ public class TaskResource {
 //    }
 
     @Produces({"application/xml"})
+    @GET
     public List<Task> getTasks(@Context SecurityContext context) {
         try {
             tx.begin();
